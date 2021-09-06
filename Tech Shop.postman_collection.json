@@ -96,7 +96,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMDk0NjQzOCwiaWF0IjoxNjMwOTQyODM4fQ.YhXNgd7h-yt9Roo6bBZsDcOb535oVSDa_yJPS6xd4w-6HpB9N8jl4jt4gUjLA_mftt57nnXExrw9ghS7fu24cw",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMDk1MTU1OCwiaWF0IjoxNjMwOTQ3OTU4fQ.qsfRSDmeRxVyTaMttFtm8NFgikLkZ9AN0mYlV2nk9eHHAaMT-4MHLLIlp-yam8zbRhGAXGLpXTmij7ihrhCseA",
 							"type": "string"
 						}
 					]
@@ -105,7 +105,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nombre\": \"Disco duro SSD\",\r\n    \"descripcion\": \"Disco duro SSD marca samnsug\",\r\n    \"imagen\": \"image.jpg\",\r\n    \"precio\": 34556,\r\n    \"cantidad\": 5\r\n}",
+					"raw": "{\r\n    \"nombre\": \"Procesador core i7\",\r\n    \"descripcion\": \"Procesador core i7 de decima generacion\",\r\n    \"imagen\": \"image.jpg\",\r\n    \"precio\": 134565,\r\n    \"cantidad\": 3\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -136,7 +136,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMDk0Njc3MSwiaWF0IjoxNjMwOTQzMTcxfQ.Q9kINRxW79TmdeWx5RJl-VZPCg7gnEJkAgByuPYnFqN9VCBJQgjYOwOj0bTsHi0ihdpa_lNNQy5Wwt4fpBJkUw",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMDk1MTUyMywiaWF0IjoxNjMwOTQ3OTIzfQ.wTUMz9FxIYplWwRHHFnIi6ovAkNF1MQ8JglzWaf155-L9axUNi6inCalSQ40njV-osbZ1bJ_0VPcpk4VHVoprA",
 							"type": "string"
 						}
 					]
@@ -167,7 +167,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMDk0Njc3MSwiaWF0IjoxNjMwOTQzMTcxfQ.Q9kINRxW79TmdeWx5RJl-VZPCg7gnEJkAgByuPYnFqN9VCBJQgjYOwOj0bTsHi0ihdpa_lNNQy5Wwt4fpBJkUw",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMDk1MTUyMywiaWF0IjoxNjMwOTQ3OTIzfQ.wTUMz9FxIYplWwRHHFnIi6ovAkNF1MQ8JglzWaf155-L9axUNi6inCalSQ40njV-osbZ1bJ_0VPcpk4VHVoprA",
 							"type": "string"
 						}
 					]
@@ -176,7 +176,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nombre\": \"Disco duro SSD\",\r\n    \"descripcion\": \"Disco duro SSD marca Kingston\",\r\n    \"imagen\": \"image.jpg\",\r\n    \"precio\": 345556,\r\n    \"cantidad\": 10\r\n}",
+					"raw": "{\r\n    \"nombre\": \"Procesador core i5\",\r\n    \"descripcion\": \"Procesador core i5 de novena generacion\",\r\n    \"imagen\": \"image.jpg\",\r\n    \"precio\": 134565.0,\r\n    \"cantidad\": 2\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -184,7 +184,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/techshop/web/v1/product/3",
+					"raw": "localhost:8080/techshop/web/v1/product/4",
 					"host": [
 						"localhost"
 					],
@@ -194,7 +194,7 @@
 						"web",
 						"v1",
 						"product",
-						"3"
+						"4"
 					]
 				}
 			},
