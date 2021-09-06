@@ -28,7 +28,7 @@ public class ProductController {
     }
 
     @PutMapping(value = "/product/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Object> updateProduct(@PathVariable("id") int id, @RequestBody Producto request){
+    public ResponseEntity<Object> updateProduct(@PathVariable("id") int id, @RequestBody ProductDto request){
         productService.update(request, id);
         return ResponseEntity.ok(Boolean.TRUE);
     }

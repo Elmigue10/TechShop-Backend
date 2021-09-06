@@ -32,7 +32,7 @@ public class ProductoServiceImpl implements ProductServiceI {
     }
 
     @Override
-    public void update(Producto request, int id) {
+    public void update(ProductDto request, int id) {
         Optional<Producto> productoEncontrado = productDAO.findById(id);
         Producto producto = productoEncontrado.get();
 
