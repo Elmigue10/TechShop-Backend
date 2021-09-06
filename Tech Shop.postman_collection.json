@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "34da10f4-d0d7-4add-98c9-af13cb50c8b3",
+		"name": "Tech Shop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Hello User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMDk0NjcxNywiaWF0IjoxNjMwOTQzMTE3fQ.sWESEXjxksbHbwvNHP95BpKeC53cKw-IuxaXsgd3RZ1fKe19UNSAe4IHperMsXgVfUZaoYW5KHRvTOYO63F7rQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/hellouser",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hellouser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Solicitar token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Hello Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMDk0Njc3MSwiaWF0IjoxNjMwOTQzMTcxfQ.Q9kINRxW79TmdeWx5RJl-VZPCg7gnEJkAgByuPYnFqN9VCBJQgjYOwOj0bTsHi0ihdpa_lNNQy5Wwt4fpBJkUw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/helloadmin",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"helloadmin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar prodcuto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMDk0NjQzOCwiaWF0IjoxNjMwOTQyODM4fQ.YhXNgd7h-yt9Roo6bBZsDcOb535oVSDa_yJPS6xd4w-6HpB9N8jl4jt4gUjLA_mftt57nnXExrw9ghS7fu24cw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Disco duro SSD\",\r\n    \"descripcion\": \"Disco duro SSD marca samnsug\",\r\n    \"imagen\": \"image.jpg\",\r\n    \"precio\": 34556,\r\n    \"cantidad\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/techshop/web/v1/product",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"techshop",
+						"web",
+						"v1",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todos los productos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMDk0Njc3MSwiaWF0IjoxNjMwOTQzMTcxfQ.Q9kINRxW79TmdeWx5RJl-VZPCg7gnEJkAgByuPYnFqN9VCBJQgjYOwOj0bTsHi0ihdpa_lNNQy5Wwt4fpBJkUw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/techshop/web/v1/product",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"techshop",
+						"web",
+						"v1",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar producto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMDk0Njc3MSwiaWF0IjoxNjMwOTQzMTcxfQ.Q9kINRxW79TmdeWx5RJl-VZPCg7gnEJkAgByuPYnFqN9VCBJQgjYOwOj0bTsHi0ihdpa_lNNQy5Wwt4fpBJkUw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Disco duro SSD\",\r\n    \"descripcion\": \"Disco duro SSD marca Kingston\",\r\n    \"imagen\": \"image.jpg\",\r\n    \"precio\": 345556,\r\n    \"cantidad\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/techshop/web/v1/product/3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"techshop",
+						"web",
+						"v1",
+						"product",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar producto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMDk0Njc3MSwiaWF0IjoxNjMwOTQzMTcxfQ.Q9kINRxW79TmdeWx5RJl-VZPCg7gnEJkAgByuPYnFqN9VCBJQgjYOwOj0bTsHi0ihdpa_lNNQy5Wwt4fpBJkUw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/techshop/web/v1/product/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"techshop",
+						"web",
+						"v1",
+						"product",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

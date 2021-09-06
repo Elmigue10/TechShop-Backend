@@ -1,0 +1,14 @@
+docker pull mysql
+docker run -d -p 3306:3306 --name mysql-db -e MYSQL_ROOT_PASSWORD=secret mysql
+docker exec -it mysql-db mysql -p
+contraseña: secret
+create database techshop;
+use techshop;
+CREATE TABLE producto(
+    id int not null PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR (60) not null,
+    descripcion VARCHAR (300) not null,
+    imagen VARCHAR(200) not null,     
+    precio FLOAT not null,
+    cantidad int not null
+); 
