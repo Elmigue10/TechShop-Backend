@@ -10,12 +10,14 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("techshop/web/v1")
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,
+        RequestMethod.PUT, RequestMethod.DELETE})
 public class ProductController {
 
     @Autowired
     private ProductServiceI productService;
 
-    @PostMapping(value = "/product", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/product/save", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> save(@RequestBody ProductDto request){
         productService.save(request);
 
