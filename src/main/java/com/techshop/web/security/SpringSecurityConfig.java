@@ -1,5 +1,8 @@
-package com.techshop.web.config;
+package com.techshop.web.security;
 
+import com.techshop.web.config.CustomJwtAuthenticationFilter;
+import com.techshop.web.config.CustomUserDetailsService;
+import com.techshop.web.config.JwtAuthenticationEntryPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
