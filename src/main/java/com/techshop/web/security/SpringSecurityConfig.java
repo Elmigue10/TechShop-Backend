@@ -48,7 +48,19 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable()
+
+        http
+                .cors().and().csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/authenticate")
+                .permitAll()
+                .anyRequest()
+                .authenticated().and()
+                .exceptionHandling().authenticationEntryPoint(unauthorizedHandler)
+                .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http.addFilterBefore((Filter) customJwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
+
+        /*http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/helloadmin").hasRole("ADMIN")
                 .antMatchers("/hellouser").hasAnyRole("USER","ADMIN")
@@ -63,7 +75,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 //Add a filter to validate the tokens with every request
                 http.addFilterBefore((Filter) customJwtAuthenticationFilter,
-                UsernamePasswordAuthenticationFilter.class);
+                UsernamePasswordAuthenticationFilter.class);*/
     }
 
 }
