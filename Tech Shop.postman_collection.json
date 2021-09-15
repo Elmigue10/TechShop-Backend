@@ -99,7 +99,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMDk1MTU1OCwiaWF0IjoxNjMwOTQ3OTU4fQ.qsfRSDmeRxVyTaMttFtm8NFgikLkZ9AN0mYlV2nk9eHHAaMT-4MHLLIlp-yam8zbRhGAXGLpXTmij7ihrhCseA",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMTc0Njc0NywiaWF0IjoxNjMxNzQzMTQ3fQ.Cnd6G-2FSwPP4Yz2jtq_jZ7SzcNeoP4aZj3So6QuyMTLPpD2Obcti-pfC2F-Xm0HogX-4c2TC0yIaCkfM5Bx-g",
 							"type": "string"
 						}
 					]
@@ -116,7 +116,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/techshop/web/v1/product",
+					"raw": "localhost:8080/techshop/web/v1/product/save",
 					"host": [
 						"localhost"
 					],
@@ -125,7 +125,8 @@
 						"techshop",
 						"web",
 						"v1",
-						"product"
+						"product",
+						"save"
 					]
 				}
 			},
@@ -135,14 +136,7 @@
 			"name": "Obtener todos los productos",
 			"request": {
 				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMTc0NjQ1NywiaWF0IjoxNjMxNzQyODU3fQ.-64TzT6AbIaiIdP2Dd7gUJmaoD9mKL_rqej1jBfTAPzzzdBz0p33AEWPgG2AbEXE0GxMWyk50ZS9mrfLPaUc_Q",
-							"type": "string"
-						}
-					]
+					"type": "noauth"
 				},
 				"method": "GET",
 				"header": [],
