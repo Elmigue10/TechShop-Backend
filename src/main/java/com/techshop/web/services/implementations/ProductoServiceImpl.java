@@ -8,6 +8,7 @@ import com.techshop.web.utils.helpers.MHelpers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,5 +49,15 @@ public class ProductoServiceImpl implements ProductServiceI {
     @Override
     public void deletedById(int id) {
         productDAO.deleteById(id);
+    }
+
+    @Override
+    public ProductDto findById(int id) {
+
+        Optional<Producto> productoEncontrado = productDAO.findById(id);
+
+        ProductDto producto = MHelpers.modelMapper().map(productoEncontrado.get(), ProductDto.class);
+
+        return producto;
     }
 }

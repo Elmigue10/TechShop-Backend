@@ -48,12 +48,15 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/authenticate",
+					"raw": "localhost:8080/techshop/web/v1/authenticate",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
+						"techshop",
+						"web",
+						"v1",
 						"authenticate"
 					]
 				}
@@ -136,7 +139,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMDk1MTUyMywiaWF0IjoxNjMwOTQ3OTIzfQ.wTUMz9FxIYplWwRHHFnIi6ovAkNF1MQ8JglzWaf155-L9axUNi6inCalSQ40njV-osbZ1bJ_0VPcpk4VHVoprA",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMTc0NjQ1NywiaWF0IjoxNjMxNzQyODU3fQ.-64TzT6AbIaiIdP2Dd7gUJmaoD9mKL_rqej1jBfTAPzzzdBz0p33AEWPgG2AbEXE0GxMWyk50ZS9mrfLPaUc_Q",
 							"type": "string"
 						}
 					]
@@ -227,6 +230,38 @@
 						"v1",
 						"product",
 						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener producto por id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMTc0NjQ1NywiaWF0IjoxNjMxNzQyODU3fQ.-64TzT6AbIaiIdP2Dd7gUJmaoD9mKL_rqej1jBfTAPzzzdBz0p33AEWPgG2AbEXE0GxMWyk50ZS9mrfLPaUc_Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/techshop/web/v1/product/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"techshop",
+						"web",
+						"v1",
+						"product",
+						"4"
 					]
 				}
 			},
