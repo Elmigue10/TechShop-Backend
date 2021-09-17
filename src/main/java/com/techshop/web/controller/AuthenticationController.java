@@ -3,8 +3,10 @@ package com.techshop.web.controller;
 
 import com.techshop.web.config.CustomUserDetailsService;
 import com.techshop.web.config.JwtUtil;
+import com.techshop.web.dto.UserDto;
 import com.techshop.web.model.AuthenticationRequest;
 import com.techshop.web.model.AuthenticationResponse;
+import com.techshop.web.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -33,19 +35,30 @@ public class AuthenticationController {
 
     @PostMapping(path = "/authenticate",  consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest request) throws Exception {
-        try{
-            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
-                    request.getUsername(), request.getPassword()));
-        } catch (DisabledException e) {
-            throw new Exception("USER_DISABLE", e);
-        } catch (BadCredentialsException e){
-            throw new Exception("INVALID_CREDENTIALS", e);
-        }
-        final UserDetails userDetails = customUserDetailsService.loadUserByUsername(request.getUsername());
+    public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest)
+            throws Exception {
+
+        authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
+
+        final UserDetails userDetails = customUserDetailsService.loadUserByUsername(authenticationRequest.getUsername());
+
         final String token = jwtUtil.generateToken(userDetails);
 
         return ResponseEntity.ok(new AuthenticationResponse(token));
     }
 
+    @PostMapping(value = "/register", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> saveUser(@RequestBody User user) throws Exception {
+        return ResponseEntity.ok(customUserDetailsService.save(user));
+    }
+
+    private void authenticate(String username, String password) throws Exception {
+        try {
+            authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(username, password));
+        } catch (DisabledException e) {
+            throw new Exception("USER_DISABLED", e);
+        } catch (BadCredentialsException e) {
+            throw new Exception("INVALID_CREDENTIALS", e);
+        }
+    }
 }

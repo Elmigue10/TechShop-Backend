@@ -12,4 +12,11 @@ CREATE TABLE producto(
     imagen VARCHAR(200) not null,     
     precio FLOAT not null,
     cantidad int not null
-); 
+);
+
+CREATE TABLE user(
+    id int not null PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR (60),
+    username VARCHAR (60) not null,
+    password VARCHAR (120) not null
+);
