@@ -23,9 +23,9 @@ public class ProductDto implements Serializable {
     @JsonProperty("descripcion")
     private String descripcion;
 
-    @NotNull(message = "La imagen del prodcuto es requerida")
-    @JsonProperty("imagen")
-    private String imagen;
+    private String imagenUrl;
+
+    private String imagenId;
 
     @NotNull(message = "El precio del prodcuto es requerido")
     @JsonProperty("precio")

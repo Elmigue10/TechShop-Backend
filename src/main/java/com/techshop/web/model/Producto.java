@@ -26,8 +26,11 @@ public class Producto implements Serializable {
     @Column(name = "descripcion")
     private String descripcion;
 
-    @Column(name = "imagen")
-    private String imagen;
+    @Column(name = "imagenUrl")
+    private String imagenUrl;
+
+    @Column(name = "imagenId")
+    private String imagenId;
 
     @Column(name = "precio")
     private float precio;
