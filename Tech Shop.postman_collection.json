@@ -40,7 +40,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}\r\n",
+					"raw": "{\r\n    \"username\":\"Elmigue\",\r\n    \"password\":\"1234\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -256,6 +256,36 @@
 						"v1",
 						"product",
 						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registrar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"admin\",\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/techshop/web/v1/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"techshop",
+						"web",
+						"v1",
+						"register"
 					]
 				}
 			},
