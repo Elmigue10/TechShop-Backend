@@ -6,6 +6,7 @@ create database techshop;
 use techshop;
 
 
+
 CREATE TABLE producto(
     id int not null PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR (60) not null,
