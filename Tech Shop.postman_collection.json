@@ -99,7 +99,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMTc0Njc0NywiaWF0IjoxNjMxNzQzMTQ3fQ.Cnd6G-2FSwPP4Yz2jtq_jZ7SzcNeoP4aZj3So6QuyMTLPpD2Obcti-pfC2F-Xm0HogX-4c2TC0yIaCkfM5Bx-g",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFbG1pZ3VlIiwiZXhwIjoxNjMyMjA0MDYwLCJpYXQiOjE2MzIxODYwNjB9.DsQUT0jyKQx4lcg1JI1XS4orysKV6IvnFgeHU5pgfDccVEBAx4KJzFcq64wF83br5T0CleBRWnjyJ0s4vWuOkQ",
 							"type": "string"
 						}
 					]
@@ -107,8 +107,19 @@
 				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"nombre\": \"Procesador core i7\",\r\n    \"descripcion\": \"Procesador core i7 de decima generacion\",\r\n    \"imagen\": \"image.jpg\",\r\n    \"precio\": 134565,\r\n    \"cantidad\": 3\r\n}",
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/PC/Downloads/monitor.jpg"
+						},
+						{
+							"key": "request",
+							"value": "{\"nombre\":\"Teclado\", \"descripcion\":\"Teclado gamer vsg\" , \"imagenUrl\":\"Procesador\", \"imagenId\":\"Procesador\", \"precio\":5464, \"cantidad\":7}",
+							"type": "text"
+						}
+					],
 					"options": {
 						"raw": {
 							"language": "json"
@@ -237,7 +248,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMTc0NjQ1NywiaWF0IjoxNjMxNzQyODU3fQ.-64TzT6AbIaiIdP2Dd7gUJmaoD9mKL_rqej1jBfTAPzzzdBz0p33AEWPgG2AbEXE0GxMWyk50ZS9mrfLPaUc_Q",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFbG1pZ3VlIiwiZXhwIjoxNjMyMjA0MDYwLCJpYXQiOjE2MzIxODYwNjB9.DsQUT0jyKQx4lcg1JI1XS4orysKV6IvnFgeHU5pgfDccVEBAx4KJzFcq64wF83br5T0CleBRWnjyJ0s4vWuOkQ",
 							"type": "string"
 						}
 					]
@@ -245,7 +256,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/techshop/web/v1/product/4",
+					"raw": "localhost:8080/techshop/web/v1/product/5",
 					"host": [
 						"localhost"
 					],
@@ -255,7 +266,7 @@
 						"web",
 						"v1",
 						"product",
-						"4"
+						"5"
 					]
 				}
 			},
