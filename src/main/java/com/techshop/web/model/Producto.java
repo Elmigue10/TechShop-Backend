@@ -26,10 +26,10 @@ public class Producto implements Serializable {
     @Column(name = "descripcion")
     private String descripcion;
 
-    @Column(name = "imagenUrl")
+    @Column(name = "imagen_url")
     private String imagenUrl;
 
-    @Column(name = "imagenId")
+    @Column(name = "imagen_id")
     private String imagenId;
 
     @Column(name = "precio")

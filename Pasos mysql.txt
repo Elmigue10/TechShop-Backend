@@ -9,8 +9,8 @@ CREATE TABLE producto(
     id int not null PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR (60) not null,
     descripcion VARCHAR (300) not null,
-    imagenUrl VARCHAR(200) not null,
-    imagenId VARCHAR(100) not null,     
+    imagen_url VARCHAR(200) not null,
+    imagen_id VARCHAR(100) not null,     
     precio FLOAT not null,
     cantidad int not null
 );

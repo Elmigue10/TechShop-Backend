@@ -1,5 +1,9 @@
 package com.techshop.web.controller;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.techshop.web.dto.ProductDto;
 import com.techshop.web.model.Producto;
 import com.techshop.web.services.implementations.CloudinaryService;
@@ -24,26 +28,33 @@ import java.util.Map;
         RequestMethod.PUT, RequestMethod.DELETE})
 public class ProductController {
 
+
     @Autowired
     CloudinaryService cloudinaryService;
 
     @Autowired
     private ProductServiceI productService;
 
-    @PostMapping(value = "/product/save", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> save(@RequestBody ProductDto request,
-                                  @RequestParam MultipartFile multipartFile) throws IOException {
+    @PostMapping(value = "/product/save")
+    public ResponseEntity<?> save(@RequestParam String request,
+                                  @RequestParam("file") MultipartFile file) throws IOException{
 
-        BufferedImage bi = ImageIO.read(multipartFile.getInputStream());
+        BufferedImage bi = ImageIO.read(file.getInputStream());
         if(bi == null){
                 return new ResponseEntity("Imagen no válida", HttpStatus.BAD_REQUEST);
         }
-        Map result = cloudinaryService.upload(multipartFile);
+        Map result = cloudinaryService.upload(file);
 
-        request.setImagenUrl((String)result.get("url"));
-        request.setImagenId((String)result.get("public_id"));
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+        Gson gson = builder.create();
 
-        productService.save(request);
+        ProductDto producto = gson.fromJson(request, ProductDto.class);
+
+        producto.setImagenUrl((String)result.get("url"));
+        producto.setImagenId(result.get("public_id").toString());
+
+        productService.save(producto);
 
         return ResponseEntity.ok(Boolean.TRUE);
     }
@@ -60,28 +71,34 @@ public class ProductController {
 
     @PutMapping(value = "/product/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> updateProduct(@PathVariable("id") int id,
-                                                @RequestBody ProductDto request,
-                                                @RequestParam MultipartFile multipartFile) throws IOException {
+                                                @RequestParam String request,
+                                                @RequestParam("file") MultipartFile file) throws IOException {
 
-        cloudinaryService.delete(request.getImagenId());
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+        Gson gson = builder.create();
 
-        BufferedImage bi = ImageIO.read(multipartFile.getInputStream());
+        ProductDto producto = gson.fromJson(request, ProductDto.class);
+
+        cloudinaryService.delete(producto.getImagenId());
+
+        BufferedImage bi = ImageIO.read(file.getInputStream());
         if(bi == null){
             return new ResponseEntity("Imagen no válida", HttpStatus.BAD_REQUEST);
         }
-        Map result = cloudinaryService.upload(multipartFile);
+        Map result = cloudinaryService.upload(file);
 
-        request.setImagenUrl((String)result.get("url"));
-        request.setImagenId((String)result.get("public_id"));
+        producto.setImagenUrl((String)result.get("url"));
+        producto.setImagenId((String)result.get("public_id"));
 
-        productService.update(request, id);
+        productService.update(producto, id);
         return ResponseEntity.ok(Boolean.TRUE);
     }
 
     @DeleteMapping(value = "/product/{id}")
     public ResponseEntity<Object> deleteById(@PathVariable("id") int id,
-                                             @RequestBody String imagenUrl) throws IOException {
-        cloudinaryService.delete(imagenUrl);
+                                             @RequestBody String imagenId) throws IOException {
+        cloudinaryService.delete(imagenId);
         productService.deletedById(id);
         return ResponseEntity.ok(Boolean.TRUE);
     }

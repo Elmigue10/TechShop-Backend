@@ -6,6 +6,7 @@ import com.techshop.web.repository.ProductDAO;
 import com.techshop.web.services.interfaces.ProductServiceI;
 import com.techshop.web.utils.helpers.MHelpers;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Type;
@@ -21,7 +22,14 @@ public class ProductoServiceImpl implements ProductServiceI {
     @Override
     public void save(ProductDto request) {
 
-        Producto producto = MHelpers.modelMapper().map(request, Producto.class);
+        Producto producto = new Producto();
+
+        producto.setNombre(request.getNombre());
+        producto.setDescripcion(request.getDescripcion());
+        producto.setImagenUrl(request.getImagenUrl());
+        producto.setImagenId(request.getImagenId());
+        producto.setPrecio(request.getPrecio());
+        producto.setCantidad(request.getCantidad());
 
         productDAO.save(producto);
     }
