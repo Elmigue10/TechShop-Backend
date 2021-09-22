@@ -2,14 +2,12 @@ package com.techshop.web.services.implementations;
 
 import com.techshop.web.dto.ProductDto;
 import com.techshop.web.model.Producto;
-import com.techshop.web.repository.ProductDAO;
+import com.techshop.web.repository.ProductRepository;
 import com.techshop.web.services.interfaces.ProductServiceI;
 import com.techshop.web.utils.helpers.MHelpers;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Service;
 
-import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,7 +15,7 @@ import java.util.Optional;
 public class ProductoServiceImpl implements ProductServiceI {
 
     @Autowired
-    private ProductDAO productDAO;
+    private ProductRepository productRepository;
 
     @Override
     public void save(ProductDto request) {
@@ -31,18 +29,18 @@ public class ProductoServiceImpl implements ProductServiceI {
         producto.setPrecio(request.getPrecio());
         producto.setCantidad(request.getCantidad());
 
-        productDAO.save(producto);
+        productRepository.save(producto);
     }
 
     @Override
     public List<Producto> findAll() {
-        List<Producto> productos = (List<Producto>) productDAO.findAll();
+        List<Producto> productos = (List<Producto>) productRepository.findAll();
         return productos;
     }
 
     @Override
     public void update(ProductDto request, int id) {
-        Optional<Producto> productoEncontrado = productDAO.findById(id);
+        Optional<Producto> productoEncontrado = productRepository.findById(id);
         Producto producto = productoEncontrado.get();
 
         producto.setNombre(request.getNombre());
@@ -52,18 +50,18 @@ public class ProductoServiceImpl implements ProductServiceI {
         producto.setPrecio(request.getPrecio());
         producto.setCantidad(request.getCantidad());
 
-        productDAO.save(producto);
+        productRepository.save(producto);
     }
 
     @Override
     public void deletedById(int id) {
-        productDAO.deleteById(id);
+        productRepository.deleteById(id);
     }
 
     @Override
     public ProductDto findById(int id) {
 
-        Optional<Producto> productoEncontrado = productDAO.findById(id);
+        Optional<Producto> productoEncontrado = productRepository.findById(id);
 
         ProductDto producto = MHelpers.modelMapper().map(productoEncontrado.get(), ProductDto.class);
 
