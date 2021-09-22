@@ -21,3 +21,21 @@ CREATE TABLE user(
     username VARCHAR (60) not null,
     password VARCHAR (120) not null
 );
+
+create table detalle_carrito(
+    id_detalle_carrito int primary key auto_increment,
+    id_usuario int,
+    id_producto int,
+    cantidad int
+);
+
+create table carrito(
+    id_carrito int primary key auto_increment,
+    id_usuario int,
+    fecha datetime
+);
+
+create table categoria(
+    id_categoria int primary key auto_increment,
+    categoria varchar(100)
+);
