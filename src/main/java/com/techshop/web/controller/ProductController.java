@@ -69,7 +69,7 @@ public class ProductController {
         return ResponseEntity.ok(productService.findById(id));
     }
 
-    @PutMapping(value = "/product/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "/product/{id}")
     public ResponseEntity<Object> updateProduct(@PathVariable("id") int id,
                                                 @RequestParam String request,
                                                 @RequestParam("file") MultipartFile file) throws IOException {
