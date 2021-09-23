@@ -119,12 +119,7 @@
 							"value": "{\"nombre\":\"Teclado\", \"descripcion\":\"Teclado gamer vsg\" , \"imagenUrl\":\"Procesador\", \"imagenId\":\"Procesador\", \"precio\":5464, \"cantidad\":7}",
 							"type": "text"
 						}
-					],
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+					]
 				},
 				"url": {
 					"raw": "localhost:8080/techshop/web/v1/product/save",
@@ -297,6 +292,162 @@
 						"web",
 						"v1",
 						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "carrito/obtener",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFbG1pZ3VlIiwiZXhwIjoxNjMyMzczNDEzLCJpYXQiOjE2MzIzNTU0MTN9.pPFSUSl4BabeAjY0t1xDA8DtAC-S9PUDKyhWXJY4CPmtWlhPfhCMPOiZF1HTCJEN5vN4XcCGpYbjispeCu3htA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/techshop/web/v1/carrito/producto/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"techshop",
+						"web",
+						"v1",
+						"carrito",
+						"producto",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "carrito/eliminar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFbG1pZ3VlIiwiZXhwIjoxNjMyMzczNDEzLCJpYXQiOjE2MzIzNTU0MTN9.pPFSUSl4BabeAjY0t1xDA8DtAC-S9PUDKyhWXJY4CPmtWlhPfhCMPOiZF1HTCJEN5vN4XcCGpYbjispeCu3htA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idUsuario\":1,\n    \"idProducto\":6,\n    \"cantidad\":4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/techshop/web/v1/carrito/producto",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"techshop",
+						"web",
+						"v1",
+						"carrito",
+						"producto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "carrito/actualizar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFbG1pZ3VlIiwiZXhwIjoxNjMyMzczNDEzLCJpYXQiOjE2MzIzNTU0MTN9.pPFSUSl4BabeAjY0t1xDA8DtAC-S9PUDKyhWXJY4CPmtWlhPfhCMPOiZF1HTCJEN5vN4XcCGpYbjispeCu3htA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idUsuario\":1,\n    \"idProducto\":6,\n    \"cantidad\":2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/techshop/web/v1/carrito/producto",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"techshop",
+						"web",
+						"v1",
+						"carrito",
+						"producto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "carrito/agregar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFbG1pZ3VlIiwiZXhwIjoxNjMyMzczNDEzLCJpYXQiOjE2MzIzNTU0MTN9.pPFSUSl4BabeAjY0t1xDA8DtAC-S9PUDKyhWXJY4CPmtWlhPfhCMPOiZF1HTCJEN5vN4XcCGpYbjispeCu3htA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"idUsuario\":1,\n    \"idProducto\":6,\n    \"cantidad\":14\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/techshop/web/v1/carrito/producto",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"techshop",
+						"web",
+						"v1",
+						"carrito",
+						"producto"
 					]
 				}
 			},
