@@ -1,6 +1,9 @@
 package com.techshop.web.config;
 
+import com.techshop.web.model.User;
+import com.techshop.web.repository.UserRepository;
 import io.jsonwebtoken.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.GrantedAuthority;
@@ -15,6 +18,9 @@ import java.util.function.Function;
 
 @Service
 public class JwtUtil {
+
+    @Autowired
+    private UserRepository userRepository;
 
     private String secret;
     private int jwtExpirationInMs;
@@ -60,8 +66,9 @@ public class JwtUtil {
 
     //generate token for user
     public String generateToken(UserDetails userDetails) {
+        User user = userRepository.findByUsername(userDetails.getUsername());
         Map<String, Object> claims = new HashMap<>();
-        return doGenerateToken(claims, userDetails.getUsername());
+        return doGenerateToken(claims, userDetails.getUsername(), String.valueOf(user.getId()));
     }
 
     //while creating the token -
@@ -69,9 +76,9 @@ public class JwtUtil {
     //2. Sign the JWT using the HS512 algorithm and secret key.
     //3. According to JWS Compact Serialization(https://tools.ietf.org/html/draft-ietf-jose-json-web-signature-41#section-3.1)
     //   compaction of the JWT to a URL-safe string
-    private String doGenerateToken(Map<String, Object> claims, String subject) {
+    private String doGenerateToken(Map<String, Object> claims, String subject, String id) {
 
-        return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
+        return Jwts.builder().setClaims(claims).setSubject(subject).setId(id).setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + JWT_TOKEN_VALIDITY * 1000))
                 .signWith(SignatureAlgorithm.HS512, secret).compact();
     }
