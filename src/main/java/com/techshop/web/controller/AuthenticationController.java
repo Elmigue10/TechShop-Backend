@@ -3,9 +3,9 @@ package com.techshop.web.controller;
 
 import com.techshop.web.config.CustomUserDetailsService;
 import com.techshop.web.config.JwtUtil;
-import com.techshop.web.dto.UserDto;
 import com.techshop.web.model.AuthenticationRequest;
 import com.techshop.web.model.AuthenticationResponse;
+import com.techshop.web.model.LoginResponse;
 import com.techshop.web.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -33,6 +33,8 @@ public class AuthenticationController {
     @Autowired
     private JwtUtil jwtUtil;
 
+    private LoginResponse loginResponse = new LoginResponse();
+
     @PostMapping(path = "/authenticate",  consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest)
@@ -43,8 +45,14 @@ public class AuthenticationController {
         final UserDetails userDetails = customUserDetailsService.loadUserByUsername(authenticationRequest.getUsername());
 
         final String token = jwtUtil.generateToken(userDetails);
+        String nombreToken = jwtUtil.getUsernameFromToken(token);
+        String idToken = jwtUtil.getIdFromToken(token);
 
-        return ResponseEntity.ok(new AuthenticationResponse(token));
+        loginResponse.setId(idToken);
+        loginResponse.setNombre(nombreToken);
+        loginResponse.setToken(token);
+
+        return ResponseEntity.ok(loginResponse);
     }
 
     @PostMapping(value = "/register", consumes = MediaType.APPLICATION_JSON_VALUE)

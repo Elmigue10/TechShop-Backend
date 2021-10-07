@@ -44,6 +44,10 @@ public class JwtUtil {
         return getClaimFromToken(token, Claims::getSubject);
     }
 
+    public String getIdFromToken(String token){
+        return getClaimFromToken(token, Claims::getId);
+    }
+
     //retrieve expiration date from jwt token
     public Date getExpirationDateFromToken(String token) {
         return getClaimFromToken(token, Claims::getExpiration);
