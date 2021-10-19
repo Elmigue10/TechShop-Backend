@@ -3,10 +3,13 @@ package com.techshop.web.busines.services;
 import com.techshop.web.busines.mapper.UserMapper;
 import com.techshop.web.model.dto.UserDto;
 import com.techshop.web.model.dto.UserNamePassword;
+import com.techshop.web.model.entity.User;
 import com.techshop.web.model.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -35,4 +38,9 @@ public class UserService {
     public void updatePassword(UserNamePassword userNamePassword){
         userRepository.updatePasswordByUserName(userNamePassword.getUsername(), bcryptEncoder.encode(userNamePassword.getPassword()));
     }
+
+    public Optional<User> findById(int id){
+        return userRepository.findById(id);
+    }
+
 }
