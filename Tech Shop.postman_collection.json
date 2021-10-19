@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "34da10f4-d0d7-4add-98c9-af13cb50c8b3",
+		"_postman_id": "38c490d6-ccf0-4f2b-9963-4cfc45034891",
 		"name": "Tech Shop",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -40,7 +40,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\":\"Elmigue\",\r\n    \"password\":\"1234\"\r\n}\r\n",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -48,11 +48,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/techshop/web/v1/authenticate",
+					"raw": "localhost:19080/techshop/web/v1/authenticate",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "19080",
 					"path": [
 						"techshop",
 						"web",
@@ -99,7 +99,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFbG1pZ3VlIiwiZXhwIjoxNjMyMzc5OTE3LCJpYXQiOjE2MzIzNjE5MTd9.U6d7YY2Vi05fyru9LrsqYHdU5qpnSmaMzWjo7Hcn77RXOvXAjyfEw5gVYJpFOd-zoJhJR2vyIvh79d2w7Zyx-w",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMTc0Njc0NywiaWF0IjoxNjMxNzQzMTQ3fQ.Cnd6G-2FSwPP4Yz2jtq_jZ7SzcNeoP4aZj3So6QuyMTLPpD2Obcti-pfC2F-Xm0HogX-4c2TC0yIaCkfM5Bx-g",
 							"type": "string"
 						}
 					]
@@ -107,19 +107,13 @@
 				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "file",
-							"type": "file",
-							"src": "/C:/Users/PC/Downloads/monitor.jpg"
-						},
-						{
-							"key": "request",
-							"value": "{\"nombre\":\"Teclado\", \"descripcion\":\"Teclado gamer vsg\" , \"imagenUrl\":\"Procesador\", \"imagenId\":\"Procesador\", \"precio\":5464, \"cantidad\":7}",
-							"type": "text"
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Procesador core i7\",\r\n    \"descripcion\": \"Procesador core i7 de decima generacion\",\r\n    \"imagen\": \"image.jpg\",\r\n    \"precio\": 134565,\r\n    \"cantidad\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
 						}
-					]
+					}
 				},
 				"url": {
 					"raw": "localhost:8080/techshop/web/v1/product/save",
@@ -178,19 +172,8 @@
 				"method": "PUT",
 				"header": [],
 				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "file",
-							"type": "file",
-							"src": "/C:/Users/PC/Downloads/monitor.jpg"
-						},
-						{
-							"key": "request",
-							"value": "{\"nombre\":\"Teclado\", \"descripcion\":\"Teclado gamer vsg\" , \"imagenUrl\":\"Procesador\", \"imagenId\":\"Procesador\", \"precio\":5464, \"cantidad\":7}",
-							"type": "text"
-						}
-					],
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Procesador core i5\",\r\n    \"descripcion\": \"Procesador core i5 de novena generacion\",\r\n    \"imagen\": \"image.jpg\",\r\n    \"precio\": 134565.0,\r\n    \"cantidad\": 2\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -222,24 +205,15 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFbG1pZ3VlIiwiZXhwIjoxNjMyMzc5OTE3LCJpYXQiOjE2MzIzNjE5MTd9.U6d7YY2Vi05fyru9LrsqYHdU5qpnSmaMzWjo7Hcn77RXOvXAjyfEw5gVYJpFOd-zoJhJR2vyIvh79d2w7Zyx-w",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMDk0Njc3MSwiaWF0IjoxNjMwOTQzMTcxfQ.Q9kINRxW79TmdeWx5RJl-VZPCg7gnEJkAgByuPYnFqN9VCBJQgjYOwOj0bTsHi0ihdpa_lNNQy5Wwt4fpBJkUw",
 							"type": "string"
 						}
 					]
 				},
 				"method": "DELETE",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"imagenId\":\"cccirhmrtwzm6d5rcmjx\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "localhost:8080/techshop/web/v1/product/16",
+					"raw": "localhost:8080/techshop/web/v1/product/2",
 					"host": [
 						"localhost"
 					],
@@ -249,7 +223,7 @@
 						"web",
 						"v1",
 						"product",
-						"16"
+						"2"
 					]
 				}
 			},
@@ -263,7 +237,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFbG1pZ3VlIiwiZXhwIjoxNjMyMjA0MDYwLCJpYXQiOjE2MzIxODYwNjB9.DsQUT0jyKQx4lcg1JI1XS4orysKV6IvnFgeHU5pgfDccVEBAx4KJzFcq64wF83br5T0CleBRWnjyJ0s4vWuOkQ",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlzQWRtaW4iOnRydWUsImV4cCI6MTYzMTc0NjQ1NywiaWF0IjoxNjMxNzQyODU3fQ.-64TzT6AbIaiIdP2Dd7gUJmaoD9mKL_rqej1jBfTAPzzzdBz0p33AEWPgG2AbEXE0GxMWyk50ZS9mrfLPaUc_Q",
 							"type": "string"
 						}
 					]
@@ -271,7 +245,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/techshop/web/v1/product/5",
+					"raw": "localhost:8080/techshop/web/v1/product/4",
 					"host": [
 						"localhost"
 					],
@@ -281,20 +255,20 @@
 						"web",
 						"v1",
 						"product",
-						"5"
+						"4"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Registrar",
+			"name": "register",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"admin\",\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+					"raw": "{\n    \"name\":\"admin\",\n    \"username\":\"admin\",\n    \"password\":\"admin\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -325,7 +299,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFbG1pZ3VlIiwiZXhwIjoxNjMyMzczNDEzLCJpYXQiOjE2MzIzNTU0MTN9.pPFSUSl4BabeAjY0t1xDA8DtAC-S9PUDKyhWXJY4CPmtWlhPfhCMPOiZF1HTCJEN5vN4XcCGpYbjispeCu3htA",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzMjI5NDYyOSwiaWF0IjoxNjMyMjc2NjI5fQ.l7nR0z9vrzFXdZ25sWGbt3kyIC4_lo4Lg3u3ydrn14G238CwnrsJ2_-pvJUcNeHNfcfCokTe_R6xrRoc7RWoPw",
 							"type": "string"
 						}
 					]
@@ -358,7 +332,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFbG1pZ3VlIiwiZXhwIjoxNjMyMzczNDEzLCJpYXQiOjE2MzIzNTU0MTN9.pPFSUSl4BabeAjY0t1xDA8DtAC-S9PUDKyhWXJY4CPmtWlhPfhCMPOiZF1HTCJEN5vN4XcCGpYbjispeCu3htA",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzMjI5NDYyOSwiaWF0IjoxNjMyMjc2NjI5fQ.l7nR0z9vrzFXdZ25sWGbt3kyIC4_lo4Lg3u3ydrn14G238CwnrsJ2_-pvJUcNeHNfcfCokTe_R6xrRoc7RWoPw",
 							"type": "string"
 						}
 					]
@@ -367,7 +341,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"idUsuario\":1,\n    \"idProducto\":6,\n    \"cantidad\":4\n}",
+					"raw": "{\n    \"idUsuario\":1,\n    \"idProducto\":2,\n    \"cantidad\":4\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -399,7 +373,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFbG1pZ3VlIiwiZXhwIjoxNjMyMzczNDEzLCJpYXQiOjE2MzIzNTU0MTN9.pPFSUSl4BabeAjY0t1xDA8DtAC-S9PUDKyhWXJY4CPmtWlhPfhCMPOiZF1HTCJEN5vN4XcCGpYbjispeCu3htA",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzMjI5NDYyOSwiaWF0IjoxNjMyMjc2NjI5fQ.l7nR0z9vrzFXdZ25sWGbt3kyIC4_lo4Lg3u3ydrn14G238CwnrsJ2_-pvJUcNeHNfcfCokTe_R6xrRoc7RWoPw",
 							"type": "string"
 						}
 					]
@@ -408,7 +382,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"idUsuario\":1,\n    \"idProducto\":6,\n    \"cantidad\":2\n}",
+					"raw": "{\n    \"idUsuario\":1,\n    \"idProducto\":1,\n    \"cantidad\":10\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -440,7 +414,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFbG1pZ3VlIiwiZXhwIjoxNjMyMzczNDEzLCJpYXQiOjE2MzIzNTU0MTN9.pPFSUSl4BabeAjY0t1xDA8DtAC-S9PUDKyhWXJY4CPmtWlhPfhCMPOiZF1HTCJEN5vN4XcCGpYbjispeCu3htA",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzMjI5NDYyOSwiaWF0IjoxNjMyMjc2NjI5fQ.l7nR0z9vrzFXdZ25sWGbt3kyIC4_lo4Lg3u3ydrn14G238CwnrsJ2_-pvJUcNeHNfcfCokTe_R6xrRoc7RWoPw",
 							"type": "string"
 						}
 					]
@@ -449,7 +423,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"idUsuario\":1,\n    \"idProducto\":6,\n    \"cantidad\":14\n}",
+					"raw": "{\n    \"idUsuario\":1,\n    \"idProducto\":2,\n    \"cantidad\":15\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -468,6 +442,286 @@
 						"v1",
 						"carrito",
 						"producto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Address/obtener",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNDU5MTc3MiwiaWF0IjoxNjM0NTczNzcyLCJqdGkiOiIxIn0.f_szayqIhUkK_hMF9KxO30QO3avsLlTNGu6gagw292daTUwIjwKFzGDjqhGgX-Fh_lHJjYWNcxguUalufE3MCQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:19080/techshop/web/v1/address/user/1",
+					"host": [
+						"localhost"
+					],
+					"port": "19080",
+					"path": [
+						"techshop",
+						"web",
+						"v1",
+						"address",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Address/agregar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNDU5MTk2MSwiaWF0IjoxNjM0NTczOTYxLCJqdGkiOiIxIn0.fNcqUFDUcou5D6Gz7kcQp8Bus_Y8PhaW-eDkR-mQRVvoMxo1RCKtOrhTgF54c6c1v8hX_l-7yDgeuZo97uwMPw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"address\": \"Calle falsa 123\",\n        \"city\": \"Bogotá\",\n        \"region\": \"Bogotá\",\n        \"phone\": \"3212299127\",\n        \"idUser\": 1\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:19080/techshop/web/v1/address/save",
+					"host": [
+						"localhost"
+					],
+					"port": "19080",
+					"path": [
+						"techshop",
+						"web",
+						"v1",
+						"address",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Address/actualizar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNDU5MTk2MSwiaWF0IjoxNjM0NTczOTYxLCJqdGkiOiIxIn0.fNcqUFDUcou5D6Gz7kcQp8Bus_Y8PhaW-eDkR-mQRVvoMxo1RCKtOrhTgF54c6c1v8hX_l-7yDgeuZo97uwMPw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"address\": \"Calle falsa 123\",\n    \"city\": \"Bogotá\",\n    \"region\": \"Bogotá\",\n    \"phone\": \"3212299127\",\n    \"idUser\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:19080/techshop/web/v1/address/update",
+					"host": [
+						"localhost"
+					],
+					"port": "19080",
+					"path": [
+						"techshop",
+						"web",
+						"v1",
+						"address",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Address/eliminar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNDYxMDMxNywiaWF0IjoxNjM0NTkyMzE3LCJqdGkiOiIxIn0.pbGj1o0f4ATvMVw48WJ1DrKya18ZjV8pi1w1KMnc5ac5tS_jpx0ILEyItc05FdOxtst5dlWew6ym4kql7Bdn9w",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"address\": \"Calle falsa 123\",\n    \"city\": \"Bogotá\",\n    \"region\": \"Bogotá\",\n    \"phone\": \"3212299127\",\n    \"idUser\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:19080/techshop/web/v1/address/delete",
+					"host": [
+						"localhost"
+					],
+					"port": "19080",
+					"path": [
+						"techshop",
+						"web",
+						"v1",
+						"address",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User/agregar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNDY3MjUxNiwiaWF0IjoxNjM0NjU0NTE2LCJqdGkiOiIxIn0.VVrEvlgsrSI-kOprReaXnCxK68aIxMU7WiSY69HP4_ipOrxU59iF5qIMwBDsCK5BshW8VIRRLAHutBM_myG7-Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"user2\",\n    \"username\":\"user2\",\n    \"password\":\"user2\",\n    \"email\":\"user2@hotmail.com\",\n    \"enable\":\"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:19080/techshop/web/v1/user/save",
+					"host": [
+						"localhost"
+					],
+					"port": "19080",
+					"path": [
+						"techshop",
+						"web",
+						"v1",
+						"user",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User/actualizar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMyIsImV4cCI6MTYzNDY3NDc4MiwiaWF0IjoxNjM0NjU2NzgyLCJqdGkiOiI1In0.FuaS2vdIp1bdUmpXQSOGfGfrjxa6qLZadvcibqyj3lVdaNyNZG508mXOm--EQWh_3erHqEVJGMykWoXcdhNhnw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"brayan fabian vargas\",\n    \"username\":\"user3\",\n    \"password\":\"123456\",\n    \"email\":\"fabian1417@hotmail.com\",\n    \"enable\":\"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:19080/techshop/web/v1/user/update",
+					"host": [
+						"localhost"
+					],
+					"port": "19080",
+					"path": [
+						"techshop",
+						"web",
+						"v1",
+						"user",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User/actualizaPassword",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMyIsImV4cCI6MTYzNDY3NDk4NCwiaWF0IjoxNjM0NjU2OTg0LCJqdGkiOiI1In0.Iq2I-9KhHlAayZq3ehs5Uaj2lNgIqlkhSPBESHHu1Rz5DSy-MqhIT9C93BXobgR6FYCLnPadTrhnnsZRkZCT3Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"user3\",\n    \"password\":\"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:19080/techshop/web/v1/user/update/password",
+					"host": [
+						"localhost"
+					],
+					"port": "19080",
+					"path": [
+						"techshop",
+						"web",
+						"v1",
+						"user",
+						"update",
+						"password"
 					]
 				}
 			},
