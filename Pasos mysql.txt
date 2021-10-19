@@ -5,37 +5,104 @@ contraseña: secret
 create database techshop;
 use techshop;
 
-CREATE TABLE producto(
-    id int not null PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR (60) not null,
-    descripcion VARCHAR (300) not null,
-    imagen_url VARCHAR(200) not null,
-    imagen_id VARCHAR(100) not null,     
-    precio FLOAT not null,
-    cantidad int not null
+create table address
+(
+    id      int auto_increment
+        primary key,
+    address varchar(150) not null,
+    city    varchar(30)  not null,
+    region  varchar(60)  not null,
+    phone   varchar(20)  not null,
+    id_user int          not null
 );
 
-CREATE TABLE user(
-    id int not null PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR (60),
-    username VARCHAR (60) not null,
-    password VARCHAR (120) not null
+create table carrito
+(
+    id_carrito int auto_increment
+        primary key,
+    fecha      datetime(6) null,
+    id_usuario int         null
 );
 
-create table detalle_carrito(
-    id_detalle_carrito int primary key auto_increment,
-    id_usuario int,
-    id_producto int,
-    cantidad int
+create table categoria
+(
+    id_categoria int auto_increment
+        primary key,
+    categoria    varchar(255) null
 );
 
-create table carrito(
-    id_carrito int primary key auto_increment,
-    id_usuario int,
-    fecha datetime
+create table detalle_carrito
+(
+    id_detalle_carrito int auto_increment
+        primary key,
+    cantidad           int null,
+    id_usuario         int null,
+    id_producto        int null
 );
 
-create table categoria(
-    id_categoria int primary key auto_increment,
-    categoria varchar(100)
+create table order_history
+(
+    id          int auto_increment
+        primary key,
+    quantity    int  not null,
+    total_price int  not null,
+    products    json not null
+);
+
+create table producto
+(
+    id           int auto_increment
+        primary key,
+    cantidad     int          null,
+    descripcion  varchar(300) null,
+    imagen_id    varchar(255) null,
+    imagen_url   varchar(255) null,
+    nombre       varchar(60)  null,
+    precio       float        null,
+    id_categoria int          null,
+    constraint FKldwld2s5t6bf3wu8js8gsbgas
+        foreign key (id_categoria) references categoria (id_categoria)
+);
+
+create table shipping
+(
+    id               int auto_increment
+        primary key,
+    sent_at          timestamp not null,
+    received         timestamp not null,
+    id_address       int       not null,
+    id_order_history int       not null
+);
+
+create table shopping_cart
+(
+    id          int auto_increment
+        primary key,
+    id_product  int not null,
+    id_user     int not null,
+    quatity     int not null,
+    total_price int not null
+);
+
+create table user
+(
+    id       int auto_increment
+        primary key,
+    name     varchar(255) null,
+    password varchar(255) not null,
+    username varchar(255) not null,
+    email    varchar(80)  not null,
+    enable   tinyint      not null,
+    constraint user_password_uindex
+        unique (password),
+    constraint user_username_uindex
+        unique (username)
+);
+
+create table user_address
+(
+    id         int auto_increment
+        primary key,
+    id_user    int not null,
+    id_address int not null
 );
