@@ -13,5 +13,5 @@ public class OrderHistoryDto {
     private Integer id ;
     private Integer quantity ;
     private Integer totalPrice;
-    private List<OrderProduct> orderProducts;
+    private String products;
 }

@@ -299,7 +299,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzMjI5NDYyOSwiaWF0IjoxNjMyMjc2NjI5fQ.l7nR0z9vrzFXdZ25sWGbt3kyIC4_lo4Lg3u3ydrn14G238CwnrsJ2_-pvJUcNeHNfcfCokTe_R6xrRoc7RWoPw",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNDg5ODMyOCwiaWF0IjoxNjM0ODgwMzI4LCJqdGkiOiIxIn0.Cf0ivIYK_NNE7H9LDVAO5XSxwrjzhXrHGfVI-Ys-hQoWnIYiiU1_qPBHTs0zeRowSGT4TWvFy0B6n2Xfn9kRpw",
 							"type": "string"
 						}
 					]
@@ -307,11 +307,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/techshop/web/v1/carrito/producto/1",
+					"raw": "localhost:19080/techshop/web/v1/carrito/producto/1",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "19080",
 					"path": [
 						"techshop",
 						"web",
@@ -332,7 +332,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzMjI5NDYyOSwiaWF0IjoxNjMyMjc2NjI5fQ.l7nR0z9vrzFXdZ25sWGbt3kyIC4_lo4Lg3u3ydrn14G238CwnrsJ2_-pvJUcNeHNfcfCokTe_R6xrRoc7RWoPw",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNDg5ODMyOCwiaWF0IjoxNjM0ODgwMzI4LCJqdGkiOiIxIn0.Cf0ivIYK_NNE7H9LDVAO5XSxwrjzhXrHGfVI-Ys-hQoWnIYiiU1_qPBHTs0zeRowSGT4TWvFy0B6n2Xfn9kRpw",
 							"type": "string"
 						}
 					]
@@ -349,11 +349,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/techshop/web/v1/carrito/producto",
+					"raw": "localhost:19080/techshop/web/v1/carrito/producto",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "19080",
 					"path": [
 						"techshop",
 						"web",
@@ -373,7 +373,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzMjI5NDYyOSwiaWF0IjoxNjMyMjc2NjI5fQ.l7nR0z9vrzFXdZ25sWGbt3kyIC4_lo4Lg3u3ydrn14G238CwnrsJ2_-pvJUcNeHNfcfCokTe_R6xrRoc7RWoPw",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNDg2ODM0MSwiaWF0IjoxNjM0ODUwMzQxLCJqdGkiOiIxIn0.Aq07ipNLpmGbEgJhKCKvcwQBrZMEuJq3j72fX6HHy1rBS17jepw5FLUvF49MzCtRYBdVi1Ju2GrH3EUxeiOMXg",
 							"type": "string"
 						}
 					]
@@ -382,7 +382,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"idUsuario\":1,\n    \"idProducto\":1,\n    \"cantidad\":10\n}",
+					"raw": "{\n    \"idUsuario\":1,\n    \"idProducto\":2,\n    \"cantidad\":100\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -390,11 +390,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/techshop/web/v1/carrito/producto",
+					"raw": "localhost:19080/techshop/web/v1/carrito/producto",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "19080",
 					"path": [
 						"techshop",
 						"web",
@@ -414,7 +414,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzMjI5NDYyOSwiaWF0IjoxNjMyMjc2NjI5fQ.l7nR0z9vrzFXdZ25sWGbt3kyIC4_lo4Lg3u3ydrn14G238CwnrsJ2_-pvJUcNeHNfcfCokTe_R6xrRoc7RWoPw",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNDg5ODMyOCwiaWF0IjoxNjM0ODgwMzI4LCJqdGkiOiIxIn0.Cf0ivIYK_NNE7H9LDVAO5XSxwrjzhXrHGfVI-Ys-hQoWnIYiiU1_qPBHTs0zeRowSGT4TWvFy0B6n2Xfn9kRpw",
 							"type": "string"
 						}
 					]
@@ -423,7 +423,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"idUsuario\":1,\n    \"idProducto\":2,\n    \"cantidad\":15\n}",
+					"raw": "{\n    \"idUsuario\":1,\n    \"idProducto\":2,\n    \"cantidad\":1\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -431,11 +431,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/techshop/web/v1/carrito/producto",
+					"raw": "localhost:19080/techshop/web/v1/carrito/producto",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "19080",
 					"path": [
 						"techshop",
 						"web",
@@ -455,7 +455,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNDU5MTc3MiwiaWF0IjoxNjM0NTczNzcyLCJqdGkiOiIxIn0.f_szayqIhUkK_hMF9KxO30QO3avsLlTNGu6gagw292daTUwIjwKFzGDjqhGgX-Fh_lHJjYWNcxguUalufE3MCQ",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNDg5ODMyOCwiaWF0IjoxNjM0ODgwMzI4LCJqdGkiOiIxIn0.Cf0ivIYK_NNE7H9LDVAO5XSxwrjzhXrHGfVI-Ys-hQoWnIYiiU1_qPBHTs0zeRowSGT4TWvFy0B6n2Xfn9kRpw",
 							"type": "string"
 						}
 					]
@@ -722,6 +722,81 @@
 						"user",
 						"update",
 						"password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order/agregar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNDg5MjM1NywiaWF0IjoxNjM0ODc0MzU3LCJqdGkiOiIxIn0.DH8lsiJ7h6023BMnnopYzqdU0_yve0AQ050vHwv0s4t6HAWzI8hzzFB1HSWWsVACl7bmbhohUsseT5upOyjPaw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\":\"admin\",\n    \"address\":\"Calle 18#1a este - 52\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:19080/techshop/web/v1/order/save/",
+					"host": [
+						"localhost"
+					],
+					"port": "19080",
+					"path": [
+						"techshop",
+						"web",
+						"v1",
+						"order",
+						"save",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Shipping/obtener",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNDg5ODMyOCwiaWF0IjoxNjM0ODgwMzI4LCJqdGkiOiIxIn0.Cf0ivIYK_NNE7H9LDVAO5XSxwrjzhXrHGfVI-Ys-hQoWnIYiiU1_qPBHTs0zeRowSGT4TWvFy0B6n2Xfn9kRpw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:19080/techshop/web/v1/shipping/user/admin",
+					"host": [
+						"localhost"
+					],
+					"port": "19080",
+					"path": [
+						"techshop",
+						"web",
+						"v1",
+						"shipping",
+						"user",
+						"admin"
 					]
 				}
 			},

@@ -39,8 +39,11 @@ public class UserService {
         userRepository.updatePasswordByUserName(userNamePassword.getUsername(), bcryptEncoder.encode(userNamePassword.getPassword()));
     }
 
-    public Optional<User> findById(int id){
+    public Optional<User> findById(Integer id){
         return userRepository.findById(id);
     }
 
+    public User findUserByUserName(String username){
+        return userRepository.findByUsername(username);
+    }
 }

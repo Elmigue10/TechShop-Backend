@@ -19,9 +19,6 @@ public class OrderHistory {
     private Integer quantity;
     @Column(name = "total_price")
     private Integer totalPrice;
-    @Embedded
-    @Type(type="json")
-    @Column(columnDefinition = "json")
-    private List<OrderProduct> orderProducts;
+    private String products;
 
 }
