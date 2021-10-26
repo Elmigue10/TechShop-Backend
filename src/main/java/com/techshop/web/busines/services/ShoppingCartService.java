@@ -11,7 +11,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -40,6 +39,7 @@ public class ShoppingCartService {
             Optional<Producto> product= productRepository.findById(shoppingCart.getIdProduct());
             shoppingCartList.add(
                     ShoppingCartDto.builder()
+                            .id(product.get().getId())
                             .nombre(product.get().getNombre())
                             .descripcion(product.get().getDescripcion())
                             .cantidad(shoppingCart.getQuatity())

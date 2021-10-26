@@ -116,11 +116,11 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/techshop/web/v1/product/save",
+					"raw": "localhost:19080/techshop/web/v1/product/save",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "19080",
 					"path": [
 						"techshop",
 						"web",
@@ -141,11 +141,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/techshop/web/v1/product",
+					"raw": "localhost:19080/techshop/web/v1/product",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "19080",
 					"path": [
 						"techshop",
 						"web",
@@ -299,7 +299,11 @@
 					"bearer": [
 						{
 							"key": "token",
+<<<<<<< HEAD
 							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNDg5ODMyOCwiaWF0IjoxNjM0ODgwMzI4LCJqdGkiOiIxIn0.Cf0ivIYK_NNE7H9LDVAO5XSxwrjzhXrHGfVI-Ys-hQoWnIYiiU1_qPBHTs0zeRowSGT4TWvFy0B6n2Xfn9kRpw",
+=======
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNTI4NDc1NywiaWF0IjoxNjM1MjY2NzU3LCJqdGkiOiIxIn0._MiTiVp7IelKDh9_VI-IE60B3dGRbsujW8eKnTrqDwcyXz0qp0iVKOn8LKRRLQkcvM39HMUaCqZ5udycpK90cg",
+>>>>>>> develop
 							"type": "string"
 						}
 					]
@@ -414,7 +418,11 @@
 					"bearer": [
 						{
 							"key": "token",
+<<<<<<< HEAD
 							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNDg5ODMyOCwiaWF0IjoxNjM0ODgwMzI4LCJqdGkiOiIxIn0.Cf0ivIYK_NNE7H9LDVAO5XSxwrjzhXrHGfVI-Ys-hQoWnIYiiU1_qPBHTs0zeRowSGT4TWvFy0B6n2Xfn9kRpw",
+=======
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNTEzNTA1MSwiaWF0IjoxNjM1MTE3MDUxLCJqdGkiOiIxIn0.SNY2j-fDl3dVjWwV0K2r5Jv5QnnNa6fHEJdRttHVUx4wGpIoSKz61T8Zv0wTgGsW03TIJePTjpe-j_bBurc4jA",
+>>>>>>> develop
 							"type": "string"
 						}
 					]
@@ -423,7 +431,11 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
+<<<<<<< HEAD
 					"raw": "{\n    \"idUsuario\":1,\n    \"idProducto\":2,\n    \"cantidad\":1\n}",
+=======
+					"raw": "{\n    \"idUsuario\":1,\n    \"idProducto\":1,\n    \"cantidad\":10\n}",
+>>>>>>> develop
 					"options": {
 						"raw": {
 							"language": "json"
@@ -455,7 +467,11 @@
 					"bearer": [
 						{
 							"key": "token",
+<<<<<<< HEAD
 							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNDg5ODMyOCwiaWF0IjoxNjM0ODgwMzI4LCJqdGkiOiIxIn0.Cf0ivIYK_NNE7H9LDVAO5XSxwrjzhXrHGfVI-Ys-hQoWnIYiiU1_qPBHTs0zeRowSGT4TWvFy0B6n2Xfn9kRpw",
+=======
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNTI4NDc1NywiaWF0IjoxNjM1MjY2NzU3LCJqdGkiOiIxIn0._MiTiVp7IelKDh9_VI-IE60B3dGRbsujW8eKnTrqDwcyXz0qp0iVKOn8LKRRLQkcvM39HMUaCqZ5udycpK90cg",
+>>>>>>> develop
 							"type": "string"
 						}
 					]
@@ -801,6 +817,74 @@
 				}
 			},
 			"response": []
+<<<<<<< HEAD
+=======
+		},
+		{
+			"name": "User/mail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrZXZpbmZlbGlwZSIsImV4cCI6MTYzNTI4MjMwNSwiaWF0IjoxNjM1MjY0MzA1LCJqdGkiOiIyIn0.V4dKSZb0SkmThQtoXQFIPBUvdLpQhEjUIOLhlSqGfa5nLTTKLeqWYr3rbDX_adqM8NtABd8MiT0rjr_IbGnzdQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:19080/techshop/web/v1/user/mail/user3",
+					"host": [
+						"localhost"
+					],
+					"port": "19080",
+					"path": [
+						"techshop",
+						"web",
+						"v1",
+						"user",
+						"mail",
+						"user3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User/obtener",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYzNTI4NDQ5MSwiaWF0IjoxNjM1MjY2NDkxLCJqdGkiOiIxIn0.MxCZFPQ_BD-2WXn184tAag2IqjMixwH9_6LECnUZZF-zQVmny8RI8gZ9NutQ6UonQGAkhCvKYq5A6MDTMTkx9g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:19080/techshop/web/v1/user/kevinfelipe",
+					"host": [
+						"localhost"
+					],
+					"port": "19080",
+					"path": [
+						"techshop",
+						"web",
+						"v1",
+						"user",
+						"kevinfelipe"
+					]
+				}
+			},
+			"response": []
+>>>>>>> develop
 		}
 	]
 }
