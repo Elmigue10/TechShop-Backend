@@ -3,6 +3,7 @@ package com.techshop.web.model.entity;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
@@ -14,6 +15,7 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @Getter
 @Setter
+@ToString
 @Table(name = "user")
 public class User implements Serializable {
 

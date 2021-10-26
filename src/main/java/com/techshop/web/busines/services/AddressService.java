@@ -25,6 +25,10 @@ public class AddressService {
     @Autowired
     private UserAddressRepository userAddressRepository;
 
+    public Optional<Address> findAddressById(Integer id){
+        return addressRepository.findById(id);
+    }
+
     public List<AddressDto> getAllAddress(Integer id) throws Exception {
         List<AddressDto> addressDtoList = new ArrayList<>();
         Optional<User> user = userRepository.findById(id);
@@ -58,4 +62,7 @@ public class AddressService {
         addressRepository.deleteByIdUser(addressDto.getAddress(),addressDto.getIdUser());
     }
 
+    Address findIdByAddress(String address){
+        return addressRepository.findIdByAddress(address);
+    }
 }

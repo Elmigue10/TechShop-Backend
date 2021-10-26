@@ -33,20 +33,20 @@ public class CarritoController {
     }
 
     @DeleteMapping("/producto")
-    ResponseEntity deleteProduto(@RequestBody DetalleCarritoDto detalleCarritoDto){
-        carritoService.eliminarProducto(detalleCarritoDto);
+    ResponseEntity deleteProdut(@RequestBody DetalleCarritoDto detalleCarritoDto){
+        shoppingCartService.deleteProduct(detalleCarritoDto);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
     @PutMapping("/producto")
-    ResponseEntity updateProducto(@RequestBody DetalleCarritoDto detalleCarritoDto){
-        carritoService.actualizarProducto(detalleCarritoDto);
+    ResponseEntity updateProduct(@RequestBody DetalleCarritoDto detalleCarritoDto){
+        shoppingCartService.updateProduct(detalleCarritoDto);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
     @PostMapping("/producto")
-    ResponseEntity createProducto(@RequestBody DetalleCarritoDto detalleCarritoDto){
-        carritoService.agregarProducto(detalleCarritoDto);
+    ResponseEntity saveProduct(@RequestBody DetalleCarritoDto detalleCarritoDto){
+        shoppingCartService.saveProduct(detalleCarritoDto);
         return new ResponseEntity(HttpStatus.CREATED);
     }
 }

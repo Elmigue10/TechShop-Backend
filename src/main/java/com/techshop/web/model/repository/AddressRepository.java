@@ -24,4 +24,6 @@ public interface AddressRepository extends JpaRepository<Address, Integer> {
     @Query("DELETE FROM Address a WHERE a.address=:address AND a.idUser=:idUser")
     void deleteByIdUser(@Param("address") String address,@Param("idUser") Integer id);
 
+    @Query("SELECT a FROM Address a WHERE a.address=:address")
+    Address findIdByAddress(@Param("address") String address);
 }

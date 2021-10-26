@@ -1,9 +1,8 @@
 package com.techshop.web.busines.services;
 
+import com.techshop.web.model.dto.DetalleCarritoDto;
 import com.techshop.web.model.dto.ShoppingCartDto;
-import com.techshop.web.model.entity.Producto;
-import com.techshop.web.model.entity.ShoppingCart;
-import com.techshop.web.model.entity.User;
+import com.techshop.web.model.entity.*;
 import com.techshop.web.model.repository.DetalleCarritoRepository;
 import com.techshop.web.model.repository.ProductRepository;
 import com.techshop.web.model.repository.ShoppingCartRepository;
@@ -40,13 +39,29 @@ public class ShoppingCartService {
             Optional<Producto> product= productRepository.findById(shoppingCart.getIdProduct());
             shoppingCartList.add(
                     ShoppingCartDto.builder()
+                            .id(product.get().getId())
                             .nombre(product.get().getNombre())
                             .descripcion(product.get().getDescripcion())
                             .cantidad(shoppingCart.getQuatity())
-                            .valor(shoppingCart.getTotalPrice())
+                            .valor(shoppingCart.getQuatity()*product.get().getPrecio())
                             .build());
         }
         return shoppingCartList;
     }
 
+    public void saveProduct(DetalleCarritoDto detalleCarritoDto){
+        shoppingCartRepository.save(new ShoppingCart(detalleCarritoDto.getIdUsuario(),detalleCarritoDto.getIdProducto(),detalleCarritoDto.getCantidad()));
+    }
+
+    public void deleteProduct(DetalleCarritoDto detalleCarritoDto){
+        shoppingCartRepository.deleteByIdUser(detalleCarritoDto.getIdUsuario(),detalleCarritoDto.getIdProducto());
+    }
+
+    public void updateProduct(DetalleCarritoDto detalleCarritoDto){
+        shoppingCartRepository.updateByIdUser(detalleCarritoDto.getIdUsuario(),detalleCarritoDto.getIdProducto(),detalleCarritoDto.getCantidad());
+    }
+
+    public void deleteShoppingCart(Integer idUser){
+        shoppingCartRepository.deleteAllByIdUser(idUser);
+    }
 }

@@ -1,6 +1,7 @@
 package com.techshop.web.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 

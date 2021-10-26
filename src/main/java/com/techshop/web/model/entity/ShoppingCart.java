@@ -23,4 +23,9 @@ public class ShoppingCart {
     @Column(name = "total_price")
     private Integer totalPrice;
 
+    public ShoppingCart(Integer idUser,Integer idProduct, Integer quatity) {
+        this.idProduct = idProduct;
+        this.idUser = idUser;
+        this.quatity = quatity;
+    }
 }

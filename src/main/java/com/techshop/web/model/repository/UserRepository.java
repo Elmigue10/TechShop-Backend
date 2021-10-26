@@ -11,6 +11,7 @@ import javax.transaction.Transactional;
 
 public interface UserRepository extends CrudRepository<User, Integer> {
     User findByUsername(String username);
+    User findByEmail(String email);
 
     @Modifying
     @Transactional
@@ -21,5 +22,7 @@ public interface UserRepository extends CrudRepository<User, Integer> {
     @Transactional
     @Query("UPDATE User u SET u.password=:password WHERE u.username=:username")
     void updatePasswordByUserName(@Param("username") String username, @Param("password") String password);
+
+
 
 }
