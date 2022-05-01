@@ -2,107 +2,121 @@ docker pull mysql
 docker run -d -p 3306:3306 --name mysql-db -e MYSQL_ROOT_PASSWORD=secret mysql
 docker exec -it mysql-db mysql -p
 contraseña: secret
+
+GENERACIÓN DE LA BASE DE DATOS:
+
 create database techshop;
 use techshop;
-
-create table address
-(
-    id      int auto_increment
-        primary key,
-    address varchar(150) not null,
-    city    varchar(30)  not null,
-    region  varchar(60)  not null,
-    phone   varchar(20)  not null,
-    id_user int          not null
+CREATE TABLE `product` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `title` varchar(150) NOT NULL,
+  `description` text,
+  `price` numeric(6,2) NOT NULL,
+  `id_category` int NOT NULL
 );
 
-create table carrito
-(
-    id_carrito int auto_increment
-        primary key,
-    fecha      datetime(6) null,
-    id_usuario int         null
+CREATE TABLE `image` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `url` varchar(255) NOT NULL
 );
 
-create table categoria
-(
-    id_categoria int auto_increment
-        primary key,
-    categoria    varchar(255) null
+CREATE TABLE `category` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `id_subcategory` int
 );
 
-create table detalle_carrito
-(
-    id_detalle_carrito int auto_increment
-        primary key,
-    cantidad           int null,
-    id_usuario         int null,
-    id_producto        int null
+CREATE TABLE `inventory` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `quantity` int NOT NULL,
+  `updated_at` timestamp NOT NULL,
+  `id_product` int NOT NULL
 );
 
-create table order_history
-(
-    id          int auto_increment
-        primary key,
-    quantity    int  not null,
-    total_price int  not null,
-    products    json not null
+CREATE TABLE `review` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `score` int NOT NULL,
+  `created_at` timestamp NOT NULL,
+  `content` text NOT NULL,
+  `likes` int,
+  `id_user` int NOT NULL,
+  `id_product` int NOT NULL
 );
 
-create table producto
-(
-    id           int auto_increment
-        primary key,
-    cantidad     int          null,
-    descripcion  varchar(300) null,
-    imagen_id    varchar(255) null,
-    imagen_url   varchar(255) null,
-    nombre       varchar(60)  null,
-    precio       float        null,
-    id_categoria int          null,
-    constraint FKldwld2s5t6bf3wu8js8gsbgas
-        foreign key (id_categoria) references categoria (id_categoria)
+CREATE TABLE `shopping_cart` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `quantity` int NOT NULL,
+  `total_price` numeric(7,2) NOT NULL,
+  `id_product` int NOT NULL,
+  `id_user` int NOT NULL
 );
 
-create table shipping
-(
-    id               int auto_increment
-        primary key,
-    sent_at          timestamp not null,
-    received         timestamp not null,
-    id_address       int       not null,
-    id_order_history int       not null
+CREATE TABLE `shipping` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `sent_at` timestamp NOT NULL,
+  `received_at` timestamp NOT NULL,
+  `id_address` int NOT NULL,
+  `id_order_history` int NOT NULL
 );
 
-create table shopping_cart
-(
-    id          int auto_increment
-        primary key,
-    id_product  int not null,
-    id_user     int not null,
-    quatity     int not null,
-    total_price int not null
+CREATE TABLE `order_history` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `quantity` int NOT NULL,
+  `total_price` numeric(7,2) NOT NULL,
+  `products` json NOT NULL
 );
 
-create table user
-(
-    id       int auto_increment
-        primary key,
-    name     varchar(255) null,
-    password varchar(255) not null,
-    username varchar(255) not null,
-    email    varchar(80)  not null,
-    enable   tinyint      not null,
-    constraint user_password_uindex
-        unique (password),
-    constraint user_username_uindex
-        unique (username)
+CREATE TABLE `user` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `name` varchar(70) NOT NULL,
+  `email` varchar(80) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `enable` boolean NOT NULL DEFAULT true
 );
 
-create table user_address
-(
-    id         int auto_increment
-        primary key,
-    id_user    int not null,
-    id_address int not null
+CREATE TABLE `address` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `address` varchar(150) NOT NULL,
+  `city` varchar(30) NOT NULL,
+  `region` varchar(60) NOT NULL,
+  `zip_code` varchar(10) NOT NULL,
+  `phone` varchar(20) NOT NULL
 );
+
+CREATE TABLE `user_address` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `id_user` int NOT NULL,
+  `id_address` int NOT NULL
+);
+
+CREATE TABLE `image_product` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `id_image` int NOT NULL,
+  `id_product` int NOT NULL
+);
+
+ALTER TABLE `product` ADD FOREIGN KEY (`id_category`) REFERENCES `category` (`id`);
+
+ALTER TABLE `category` ADD FOREIGN KEY (`id_subcategory`) REFERENCES `category` (`id`);
+
+ALTER TABLE `inventory` ADD FOREIGN KEY (`id_product`) REFERENCES `product` (`id`);
+
+ALTER TABLE `review` ADD FOREIGN KEY (`id_user`) REFERENCES `user` (`id`);
+
+ALTER TABLE `review` ADD FOREIGN KEY (`id_product`) REFERENCES `product` (`id`);
+
+ALTER TABLE `shopping_cart` ADD FOREIGN KEY (`id_product`) REFERENCES `product` (`id`);
+
+ALTER TABLE `shopping_cart` ADD FOREIGN KEY (`id_user`) REFERENCES `user` (`id`);
+
+ALTER TABLE `shipping` ADD FOREIGN KEY (`id_address`) REFERENCES `address` (`id`);
+
+ALTER TABLE `shipping` ADD FOREIGN KEY (`id_order_history`) REFERENCES `order_history` (`id`);
+
+ALTER TABLE `user_address` ADD FOREIGN KEY (`id_user`) REFERENCES `user` (`id`);
+
+ALTER TABLE `user_address` ADD FOREIGN KEY (`id_address`) REFERENCES `address` (`id`);
+
+ALTER TABLE `image_product` ADD FOREIGN KEY (`id_image`) REFERENCES `image` (`id`);
+
+ALTER TABLE `image_product` ADD FOREIGN KEY (`id_product`) REFERENCES `product` (`id`);
