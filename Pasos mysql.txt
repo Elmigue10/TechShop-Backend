@@ -120,3 +120,4 @@ ALTER TABLE `user_address` ADD FOREIGN KEY (`id_address`) REFERENCES `address` (
 ALTER TABLE `image_product` ADD FOREIGN KEY (`id_image`) REFERENCES `image` (`id`);
 
 ALTER TABLE `image_product` ADD FOREIGN KEY (`id_product`) REFERENCES `product` (`id`);
+
